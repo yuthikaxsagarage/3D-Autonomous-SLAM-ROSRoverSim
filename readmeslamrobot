@@ -1,0 +1,18 @@
+To run this gazebo model you will need to install the following ros packages
+sudo apt-get install ros-kinetic-amcl
+sudo apt-get install ros-kinetic-navigation
+
+Then you can run these launch files...
+
+roslaunch gslambot gmaprobot.launch model:=path to the /urdf/gmapbot.xacro file
+
+if you want to move the robot using the keyboard you will want to run the following node
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+ 
+
+if you want the bot to use slam and navigate use these two files
+
+roslaunch gslambot rviz_gslambot.launch
+you can add a camera to the rviz as well if you want the output image to be displayed in the rviz
+roslaunch gslambot move_base.launch 
+
